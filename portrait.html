@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetsuya Hino | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+  /* Brand icon colors */
+  .icon-surf { color: #0099ff; }
+  .icon-openai { color: #10a37f; }
+  .icon-dribbble { color: #ea4c89; }
+  .icon-vscode { color: #0078d7; }
+
       /* Hero Section */
       .hero-section {
         min-height: 100vh;
@@ -170,7 +178,7 @@
         color: #fff;
       }
       .contact-inner {
-        max-width: 500px;
+        max-width: 420px;
         margin: 0 auto;
         text-align: center;
         padding: 0 1rem;
@@ -186,31 +194,60 @@
       .contact-form {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.2rem;
         text-align: left;
+        background: rgba(30,41,59,0.95);
+        border-radius: 1.2rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        padding: 2rem 1.2rem 1.5rem 1.2rem;
+      }
+      .contact-field {
+        display: flex;
+        align-items: center;
+        background: #111927;
+        border-radius: 0.7rem;
+        padding: 0.6rem 1rem;
+        margin-bottom: 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      }
+      .contact-field i {
+        color: #60a5fa;
+        font-size: 1.2rem;
+        margin-right: 0.8rem;
+        min-width: 1.2rem;
+        text-align: center;
       }
       .contact-form input,
       .contact-form textarea {
         width: 100%;
-        padding: 0.9rem;
-        border-radius: 0.6rem;
-        background: #1e293b;
+        background: transparent;
         color: #fff;
         border: none;
         font-size: 1rem;
+        padding: 0.5rem 0;
+        outline: none;
+        resize: none;
+      }
+      .contact-form textarea {
+        min-height: 90px;
       }
       .contact-form button {
-        background: #2563eb;
+        background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
         color: #fff;
-        padding: 0.7rem 2rem;
-        border-radius: 0.6rem;
+        padding: 0.8rem 2.2rem;
+        border-radius: 0.7rem;
         font-size: 1.1rem;
         border: none;
         cursor: pointer;
-        transition: background 0.2s;
+        font-weight: bold;
+        letter-spacing: 1px;
+        margin-top: 0.7rem;
+        box-shadow: 0 2px 8px rgba(96,165,250,0.13);
+        transition: background 0.2s, transform 0.2s;
       }
       .contact-form button:hover {
-        background: #1d4fa7;
+        background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+        transform: translateY(-2px) scale(1.03);
       }
     </style>
 </head>
@@ -271,11 +308,11 @@
     <h2>Tools & Technologies</h2>
     <p class="mb-4">I work with modern tools like Windsurf, ChatGPT, Figma, and more.</p>
     <ul class="skills-list">
-      <li>Windsurf</li>
-      <li>ChatGPT</li>
-      <li>Dribbble</li>
-      <li>VS Code</li>
-    </ul>
+  <li><i class="fa-solid fa-water icon-surf"></i> Surf</li>
+  <li><span class="icon-openai" style="display:inline-block; vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M32.63 16.43c.38-1.18.58-2.41.58-3.65 0-5.38-4.37-9.75-9.75-9.75-1.25 0-2.49.23-3.65.68a9.75 9.75 0 0 0-9.07 2.59c-3.8 3.8-3.8 9.95 0 13.75.38.38.8.73 1.25 1.05l.03.02c.45.32.93.58 1.43.8l.01.01c.5.22 1.02.39 1.56.52l.03.01c.54.13 1.1.2 1.66.2.56 0 1.12-.07 1.66-.2l.03-.01c.54-.13 1.06-.3 1.56-.52l.01-.01c.5-.22.98-.48 1.43-.8l.03-.02c.45-.32.87-.67 1.25-1.05 3.8-3.8 3.8-9.95 0-13.75a9.75 9.75 0 0 0-9.07-2.59c-1.16-.45-2.4-.68-3.65-.68-5.38 0-9.75 4.37-9.75 9.75 0 1.24.2 2.47.58 3.65a9.75 9.75 0 0 0 2.59 9.07c3.8 3.8 9.95 3.8 13.75 0a9.75 9.75 0 0 0 2.59-9.07z" fill="#10a37f"/></g></svg></span> ChatGPT</li>
+  <li><i class="fa-brands fa-dribbble icon-dribbble"></i> Dribbble</li>
+  <li><i class="fa-solid fa-code icon-vscode"></i> VS Code</li>
+</ul>
   </div>
 </section>
 
@@ -285,11 +322,20 @@
     <h2>Contact Me</h2>
     <p>ポートフォリオをご覧いただきありがとうございます。お問い合わせは以下のフォームからお気軽にどうぞ。</p>
     <form class="contact-form">
-      <input type="text" placeholder="お名前" />
-      <input type="email" placeholder="メールアドレス" />
-      <textarea placeholder="お問い合わせ内容"></textarea>
-      <button>送信</button>
-    </form>
+  <div class="contact-field">
+    <i class="fa-solid fa-user"></i>
+    <input type="text" placeholder="お名前" />
+  </div>
+  <div class="contact-field">
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" placeholder="メールアドレス" />
+  </div>
+  <div class="contact-field">
+    <i class="fa-solid fa-message"></i>
+    <textarea placeholder="お問い合わせ内容"></textarea>
+  </div>
+  <button><i class="fa-solid fa-paper-plane"></i> 送信</button>
+</form>
   </div>
 </section>
 
