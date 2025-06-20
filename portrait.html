@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Orbitron font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
     <style>
   /* Brand icon colors */
   .icon-surf { color: #0099ff; }
@@ -243,6 +245,86 @@
   box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
 }
 
+/* === Neon Contact Form === */
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        text-align: left;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid #00e0ff;
+        border-radius: 20px;
+        box-shadow: 0 0 8px #00e0ff, 0 0 16px rgba(0, 224, 255, 0.6) inset;
+        padding: 2.2rem;
+        font-family: "Orbitron", sans-serif;
+      }
+      .contact-field {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: 1px solid #00e0ff;
+        border-radius: 18px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 0 6px #00e0ff inset;
+        transition: box-shadow 0.25s;
+      }
+      .contact-field:hover {
+        box-shadow: 0 0 10px #00e0ff inset, 0 0 6px #00e0ff;
+      }
+      .contact-field i {
+        color: #00e0ff;
+        font-size: 1.1rem;
+        margin-right: 0.9rem;
+        min-width: 1.2rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        background: transparent;
+        color: #c8e7ff;
+        border: none;
+        font-size: 0.95rem;
+        width: 100%;
+        outline: none;
+        font-family: inherit;
+      }
+      .contact-form textarea { min-height: 90px; }
+      .neon-btn {
+        position: relative;
+        display: inline-block;
+        color: #00e0ff;
+        padding: 0.9rem 2.8rem;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid #00e0ff;
+        border-radius: 20px;
+        background: transparent;
+        cursor: pointer;
+        transition: color 0.3s;
+        font-weight: 600;
+      }
+      .neon-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 2px;
+        background: linear-gradient(90deg, transparent, #00e0ff, transparent) no-repeat;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: neonMove 2s infinite linear;
+      }
+      @keyframes neonMove {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .neon-btn:hover {
+        color: #081018;
+        background: #00e0ff;
+        box-shadow: 0 0 12px rgba(0,224,255,0.8), 0 0 24px rgba(0,224,255,0.6);
+      }
+
 .contact-form button:hover {
   transform: translateY(-3px) scale(1.02);
   background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
@@ -333,7 +415,7 @@
     <i class="fa-solid fa-message"></i>
     <textarea placeholder="お問い合わせ内容"></textarea>
   </div>
-  <button><i class="fa-solid fa-paper-plane"></i> 送信</button>
+  <button class="neon-btn"><i class="fa-solid fa-paper-plane"></i> Send</button>
 </form>
   </div>
 </section>
