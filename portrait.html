@@ -245,7 +245,19 @@
   box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
 }
 
-/* === Neon Contact Form === */
+/* === Neon Contact Form ===
+      /* Neon icon */
+      .icon-neon svg {
+        stroke: #00e0ff;
+        fill: none;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 4px #00e0ff);
+      }
+      .icon-neon { margin-right: 0.8rem; display: inline-flex; }
+
+      /* === Neon Contact Form === */
       .contact-form {
         display: flex;
         flex-direction: column;
@@ -420,21 +432,21 @@
 <section class="contact-section">
   <div class="contact-wrapper">
     <h2>Contact Me</h2>
-    <p>ポートフォリオをご覧いただきありがとうございます。お問い合わせは以下のフォームからお気軽にどうぞ。</p>
+    <p>Thank you for checking out my portfolio. Feel free to get in touch using the form below.</p>
     <form class="contact-form">
   <div class="contact-field">
-    <i class="fa-solid fa-user"></i>
-    <input type="text" placeholder="お名前" />
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+    <input type="text" placeholder="Name" />
   </div>
   <div class="contact-field">
-    <i class="fa-solid fa-envelope"></i>
-    <input type="email" placeholder="メールアドレス" />
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 5h18v14H3z"/><polyline points="3,5 12,13 21,5"/></svg></span>
+    <input type="email" placeholder="Email" />
   </div>
   <div class="contact-field">
-    <i class="fa-solid fa-message"></i>
-    <textarea placeholder="お問い合わせ内容"></textarea>
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4h16v12H7l-3 3z"/></svg></span>
+    <textarea placeholder="Message"></textarea>
   </div>
-  <button class="neon-btn"><i class="fa-solid fa-paper-plane"></i> Send</button>
+  <button class="neon-btn"><span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><polygon points="2,3 22,12 2,21 6,12"/></svg></span> Send</button>
 </form>
   </div>
 </section>
