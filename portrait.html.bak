@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetsuya Hino | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Hero Section */
+      .hero-section {
+        min-height: 100vh;
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('images/hero_futuristic_ui_city.jpg.jpg') center/cover no-repeat;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 768px) {
+        .hero-content h1 { font-size: 3.5rem; }
+      }
+      .hero-content p {
+        font-size: 1.3rem;
+      }
+      .hero-arrow {
+        margin-top: 2.5rem;
+        font-size: 2rem;
+        animation: bounce 1.5s infinite;
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(16px); }
+      }
+
+      /* Skills Section */
+      .skills-section {
+        padding: 80px 0;
+        background: url('images/tool_icons_board_vivid.jpg') center/cover no-repeat;
+        color: #fff;
+      }
+      .skills-inner {
+        background: rgba(0,0,0,0.7);
+        padding: 2rem;
+        border-radius: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .skills-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+      .skills-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      @media (min-width: 768px) {
+        .skills-list {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .skills-list li {
+        background: rgba(255,255,255,0.10);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 80px 0;
+        background: url('images/ui_design_structure_vivid.jpg') center/cover no-repeat;
+        color: #fff;
+      }
+      .projects-inner {
+        background: rgba(0,0,0,0.7);
+        padding: 2rem;
+        border-radius: 1.2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .projects-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: left;
+      }
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (min-width: 1100px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      .project-card {
+        background: rgba(255,255,255,0.10);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 0.7rem;
+        margin-bottom: 1rem;
+      }
+      .project-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .project-card p {
+        font-size: 0.98rem;
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+      }
+      .project-card .flex {
+        display: flex;
+        gap: 1.2rem;
+      }
+      .project-card a {
+        color: #60a5fa;
+        text-decoration: underline;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      .project-card a.text-pink-400 {
+        color: #f472b6;
+      }
+      .project-card a:hover {
+        color: #fff;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #000 0%, #334155 60%, #000 100%);
+        color: #fff;
+      }
+      .contact-inner {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .contact-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+      .contact-inner p {
+        margin-bottom: 1.5rem;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem;
+        border-radius: 0.6rem;
+        background: #1e293b;
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+      }
+      .contact-form button {
+        background: #2563eb;
+        color: #fff;
+        padding: 0.7rem 2rem;
+        border-radius: 0.6rem;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .contact-form button:hover {
+        background: #1d4fa7;
+      }
+    </style>
+</head>
+<body>
+
+<!-- ✅ Heroセクション -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Tetsuya Hino</h1>
+    <p>Shaping the Future with Code & Creativity</p>
+    <div class="hero-arrow">↓</div>
+  </div>
+</section>
+
+<!-- ✅ Skillsセクション -->
+<section class="skills-section">
+  <div class="skills-inner">
+    <h2>Tools & Technologies</h2>
+    <p class="mb-4">I work with modern tools like Windsurf, ChatGPT, Figma, and more.</p>
+    <ul class="skills-list">
+      <li>Windsurf</li>
+      <li>ChatGPT</li>
+      <li>Dribbble</li>
+      <li>VS Code</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ✅ プロジェクトカードセクション -->
+<section class="projects-section">
+  <div class="projects-inner">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <!-- カード1 -->
+      <div class="project-card">
+        <img src="images/cafe_thumb.jpg" alt="カフェサイト" />
+        <h3>おしゃれカフェ公式サイト</h3>
+        <p>Windsurfで制作したカフェ向けWebサイト。Swiperでメニューをスライド可能。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/cafe-site">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+      <!-- カード2 -->
+      <div class="project-card">
+        <img src="images/lucidmaze_thumb.jpg" alt="LucidMaze Lite" />
+        <h3>LucidMaze Lite</h3>
+        <p>放置パズルゲーム。UIはSF風、Windsurfとノーコード自動化連携。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/lucidmaze">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+      <!-- カード3 -->
+      <div class="project-card">
+        <img src="images/timer_thumb.jpg" alt="タイマーアプリ" />
+        <h3>ミニマルタイマーアプリ</h3>
+        <p>シンプル操作で使いやすいタイマーアプリ。レスポンシブ対応。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/timer-app">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Contactセクション -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2>Contact Me</h2>
+    <p>ポートフォリオをご覧いただきありがとうございます。お問い合わせは以下のフォームからお気軽にどうぞ。</p>
+    <form class="contact-form">
+      <input type="text" placeholder="お名前" />
+      <input type="email" placeholder="メールアドレス" />
+      <textarea placeholder="お問い合わせ内容"></textarea>
+      <button>送信</button>
+    </form>
+  </div>
+</section>
+
+</body>
+</html>
+      .projects-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: left;
+      }
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (min-width: 1100px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      .project-card {
+        background: rgba(255,255,255,0.10);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 0.7rem;
+        margin-bottom: 1rem;
+      }
+      .project-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .project-card p {
+        font-size: 0.98rem;
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+      }
+      .project-card .flex {
+        display: flex;
+        gap: 1.2rem;
+      }
+      .project-card a {
+        color: #60a5fa;
+        text-decoration: underline;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      .project-card a.text-pink-400 {
+        color: #f472b6;
+      }
+      .project-card a:hover {
+        color: #fff;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #000 0%, #334155 60%, #000 100%);
+        color: #fff;
+      }
+      .contact-inner {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .contact-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+      .contact-inner p {
+        margin-bottom: 1.5rem;
+      }
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.9rem;
+        border-radius: 0.6rem;
+        background: #1e293b;
+        color: #fff;
+        border: none;
+        font-size: 1rem;
+      }
+      .contact-form button {
+        background: #2563eb;
+        color: #fff;
+        padding: 0.7rem 2rem;
+        border-radius: 0.6rem;
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .contact-form button:hover {
+        background: #1d4fa7;
+      }
+    </style>
+</head>
+<body>
+
+<!-- ✅ Heroセクション -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Tetsuya Hino</h1>
+    <p>Shaping the Future with Code & Creativity</p>
+    <div class="hero-arrow">↓</div>
+  </div>
+</section>
+
+<!-- ✅ Skillsセクション -->
+<section class="skills-section">
+  <div class="skills-inner">
+    <h2>Tools & Technologies</h2>
+    <p class="mb-4">I work with modern tools like Windsurf, ChatGPT, Figma, and more.</p>
+    <ul class="skills-list">
+      <li>Windsurf</li>
+      <li>ChatGPT</li>
+      <li>Dribbble</li>
+      <li>VS Code</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ✅ プロジェクトカードセクション -->
+<section class="projects-section">
+  <div class="projects-inner">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <!-- カード1 -->
+      <div class="project-card">
+        <img src="images/cafe_thumb.jpg" alt="カフェサイト" />
+        <h3>おしゃれカフェ公式サイト</h3>
+        <p>Windsurfで制作したカフェ向けWebサイト。Swiperでメニューをスライド可能。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/cafe-site">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+      <!-- カード2 -->
+      <div class="project-card">
+        <img src="images/lucidmaze_thumb.jpg" alt="LucidMaze Lite" />
+        <h3>LucidMaze Lite</h3>
+        <p>放置パズルゲーム。UIはSF風、Windsurfとノーコード自動化連携。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/lucidmaze">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+      <!-- カード3 -->
+      <div class="project-card">
+        <img src="images/timer_thumb.jpg" alt="タイマーアプリ" />
+        <h3>ミニマルタイマーアプリ</h3>
+        <p>シンプル操作で使いやすいタイマーアプリ。レスポンシブ対応。</p>
+        <div class="flex">
+          <a href="https://github.com/●●●/timer-app">GitHub</a>
+          <a href="#" class="text-pink-400">詳細</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Contactセクション -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2>Contact Me</h2>
+    <p>ポートフォリオをご覧いただきありがとうございます。お問い合わせは以下のフォームからお気軽にどうぞ。</p>
+    <form class="contact-form">
+      <input type="text" placeholder="お名前" />
+      <input type="email" placeholder="メールアドレス" />
+      <textarea placeholder="お問い合わせ内容"></textarea>
+      <button>送信</button>
+    </form>
+  </div>
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .portrait-bio {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .portrait-links a {
+            margin: 0 8px;
+            color: #3477eb;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .portrait-links a:hover {
+            color: #1d4fa7;
+        }
+    </style>
+</head>
+<body style="background:#f5fafe;">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1>未来をつなぐ、ノーコードのデザイン</h1>
+                <p class="hero-sub">DribbbleのAI Job Search風デザインをWindsurfで再現</p>
+                <a href="#works" class="hero-btn">作品を見る</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero_futuristic_ui_city.jpg.jpg" alt="近未来都市とUIのイメージ" style="width:100%;max-width:420px;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);" />
+            </div>
+        </div>
+    </section>
+
+    <!-- About this Site Section -->
+    <section class="about-section">
+        <div class="about-inner">
+            <div class="about-img">
+                <img src="images/about_futuristic_ui.jpg" alt="未来的UIのサンプル画像" style="width:100%;max-width:180px;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.07);" />
+            </div>
+            <div class="about-text">
+                <p>このページは、Dribbble作品「AI Job Search Platform」を参考に構成しています。<br>
+                ノーコードツール「Windsurf」でどこまで再現できるかを検証し、<br>
+                ポートフォリオの一例として掲載しています。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用ツール・技術 Section -->
+    <section class="tools-section" id="works">
+        <h2>使用ツール・技術</h2>
+<img src="images/tool_icons_board_vivid.jpg" alt="使用ツール・技術のアイコンボード" style="width:100%;max-width:420px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:24px;" />
+        <div class="tools-grid">
+            <div class="tool-card"><span class="tool-icon">🌊</span><span>Windsurf</span></div>
+            <div class="tool-card"><span class="tool-icon">🤖</span><span>ChatGPT</span></div>
+            <div class="tool-card"><span class="tool-icon">🎨</span><span>Dribbble</span></div>
+        </div>
+    </section>
+
+    <!-- デザイン工夫ポイント Section -->
+    <section class="points-section">
+        <h2>デザイン工夫ポイント</h2>
+<img src="images/ui_design_structure_vivid.jpg" alt="UIデザイン構造のビジュアル" style="width:100%;max-width:420px;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:24px;" />
+        <div class="points-list">
+            <div class="point-item"><img src="https://placehold.jp/64x64.png?text=Flex" alt="Flexbox"><p>Flexboxを使ったセンター配置</p></div>
+            <div class="point-item"><img src="https://placehold.jp/64x64.png?text=Icon" alt="Icon"><p>アイコンの統一感</p></div>
+            <div class="point-item"><img src="https://placehold.jp/64x64.png?text=Card" alt="Card"><p>カードの角丸＋影</p></div>
+        </div>
+    </section>
+
+    <!-- 目的セクション -->
+    <section class="purpose-section">
+        <h2>このポートフォリオの目的</h2>
+        <p>この作品は、AIやノーコードツールに関心のあるクライアントに「こんなデザインも作れます」と提案するためのポートフォリオです。</p>
+    </section>
+
+    <!-- レビュー Section -->
+    <section class="review-section">
+        <h2>レビュー</h2>
+        <div class="review-list">
+            <div class="review-card"><img src="images/user_review_female_future.jpg" alt="女性ユーザーレビューアイコン" style="width:48px;height:48px;object-fit:cover;border-radius:50%;float:left;margin-right:14px;" /><p style="margin-left:62px;">「ノーコードでここまでできるのは驚き！」</p><span style="margin-left:62px;">— ユーザーA</span></div>
+            <div class="review-card"><p>「デザインがシンプルで分かりやすいです。」</p><span>— ユーザーB</span></div>
+            <div class="review-card"><p>「AI時代のポートフォリオにぴったり。」</p><span>— ユーザーC</span></div>
+        </div>
+    </section>
+
+    <!-- 他作品リンク Section -->
+    <section class="works-section">
+        <h2>他の作品</h2>
+        <div class="works-grid">
+            <a class="work-card" href="#"><img src="https://placehold.jp/100x100.png?text=☕" alt="カフェサイト"><span>カフェサイト</span></a>
+            <a class="work-card" href="#"><img src="https://placehold.jp/100x100.png?text=✂️" alt="美容室"><span>美容室</span></a>
+            <a class="work-card" href="#"><img src="https://placehold.jp/100x100.png?text=⏱" alt="タイマーアプリ"><span>タイマーアプリ</span></a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <span>© 2025 Hino Portfolio</span>
+            <span class="footer-links">
+                <a href="https://instagram.com/" target="_blank" aria-label="Instagram">📷</a>
+                <a href="https://github.com/" target="_blank" aria-label="GitHub">💻</a>
+                <a href="#contact" aria-label="Contact">お問い合わせ</a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
