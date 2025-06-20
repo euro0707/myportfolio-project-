@@ -192,63 +192,62 @@
         margin-bottom: 1.5rem;
       }
       .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1.2rem;
-        text-align: left;
-        background: rgba(30,41,59,0.95);
-        border-radius: 1.2rem;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-        padding: 2rem 1.2rem 1.5rem 1.2rem;
-      }
-      .contact-field {
-        display: flex;
-        align-items: center;
-        background: #111927;
-        border-radius: 0.7rem;
-        padding: 0.6rem 1rem;
-        margin-bottom: 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      }
-      .contact-field i {
-        color: #60a5fa;
-        font-size: 1.2rem;
-        margin-right: 0.8rem;
-        min-width: 1.2rem;
-        text-align: center;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        background: transparent;
-        color: #fff;
-        border: none;
-        font-size: 1rem;
-        padding: 0.5rem 0;
-        outline: none;
-        resize: none;
-      }
-      .contact-form textarea {
-        min-height: 90px;
-      }
-      .contact-form button {
-        background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
-        color: #fff;
-        padding: 0.8rem 2.2rem;
-        border-radius: 0.7rem;
-        font-size: 1.1rem;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-        letter-spacing: 1px;
-        margin-top: 0.7rem;
-        box-shadow: 0 2px 8px rgba(96,165,250,0.13);
-        transition: background 0.2s, transform 0.2s;
-      }
-      .contact-form button:hover {
-        background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
-        transform: translateY(-2px) scale(1.03);
-      }
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  background: rgba(17, 24, 39, 0.9); /* ダークグレーで洗練感 */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-field {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.8rem;
+  padding: 1rem 1.2rem;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+.contact-field:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+}
+
     </style>
 </head>
 <body>
