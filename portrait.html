@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetsuya Hino | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FontAwesome Kit -->
+    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
     <!-- Orbitron font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
     <style>
   /* Brand icon colors */
-  .icon-surf { color: #0099ff; }
+  .icon-windsurf { color: #0099ff; }
   .icon-openai { color: #10a37f; }
-  .icon-dribbble { color: #ea4c89; }
+  .icon-github { color: #ffffff; }
   .icon-vscode { color: #0078d7; }
 
       /* Hero Section */
@@ -362,7 +362,45 @@
         margin-bottom: 1.5rem;
         color: #00e0ff;
       }
-  </style>
+  
+  /* === Cyber Panel Contact === */
+  .cyber-panel {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem;
+    max-width: 500px;
+    margin-inline: auto;
+    padding: 2rem;
+    background: linear-gradient(145deg, rgba(0,0,0,0.6), rgba(0,224,255,0.05));
+    border: 1px solid rgba(0,224,255,0.3);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,224,255,0.2), inset 0 0 10px rgba(0,224,255,0.1);
+    color: #c8e7ff;
+    text-align: center;
+    backdrop-filter: blur(8px);
+  }
+  .cyber-panel h3 {
+    font-size: 1.4rem;
+    color: #00e0ff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 5px #00e0ff;
+  }
+  .cyber-panel ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .cyber-panel li {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .cyber-panel i { color: #00e0ff; }
+  /* === End Cyber Panel === */
+</style>
 </head>
 <body>
 
@@ -421,9 +459,9 @@
     <h2>Tools & Technologies</h2>
     <p class="mb-4">I work with modern tools like Windsurf, ChatGPT, Figma, and more.</p>
     <ul class="skills-list">
-  <li><i class="fa-solid fa-water icon-surf"></i> Surf</li>
+  <li><i class="fa-solid fa-water icon-windsurf"></i> Windsurf</li>
   <li><span class="icon-openai" style="display:inline-block; vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M32.63 16.43c.38-1.18.58-2.41.58-3.65 0-5.38-4.37-9.75-9.75-9.75-1.25 0-2.49.23-3.65.68a9.75 9.75 0 0 0-9.07 2.59c-3.8 3.8-3.8 9.95 0 13.75.38.38.8.73 1.25 1.05l.03.02c.45.32.93.58 1.43.8l.01.01c.5.22 1.02.39 1.56.52l.03.01c.54.13 1.1.2 1.66.2.56 0 1.12-.07 1.66-.2l.03-.01c.54-.13 1.06-.3 1.56-.52l.01-.01c.5-.22.98-.48 1.43-.8l.03-.02c.45-.32.87-.67 1.25-1.05 3.8-3.8 3.8-9.95 0-13.75a9.75 9.75 0 0 0-9.07-2.59c-1.16-.45-2.4-.68-3.65-.68-5.38 0-9.75 4.37-9.75 9.75 0 1.24.2 2.47.58 3.65a9.75 9.75 0 0 0 2.59 9.07c3.8 3.8 9.95 3.8 13.75 0a9.75 9.75 0 0 0 2.59-9.07z" fill="#10a37f"/></g></svg></span> ChatGPT</li>
-  <li><i class="fa-brands fa-dribbble icon-dribbble"></i> Dribbble</li>
+  <li><i class="fa-brands fa-github icon-github"></i> GitHub</li>
   <li><i class="fa-solid fa-code icon-vscode"></i> VS Code</li>
 </ul>
   </div>
@@ -451,6 +489,16 @@
 </form>
   </div>
 </section>
+
+<div class="cyber-panel">
+  <h3>Alternate Channel</h3>
+  <p>If the form fails, reach out directly via:</p>
+  <ul>
+    <li><i class="fa-solid fa-envelope-circle-check"></i> tetsuya@futuresync.io</li>
+    <li><i class="fa-brands fa-twitter"></i> @tetsuya_dev</li>
+    <li><i class="fa-brands fa-discord"></i> Tetsuya#2049</li>
+  </ul>
+</div>
 
 </body>
 </html>
