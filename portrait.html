@@ -6,7 +6,9 @@
     <title>Tetsuya Hino | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome Kit -->
-    <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome CDN (バックアップ) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Orbitron font -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
     <style>
@@ -24,7 +26,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: url('images/hero_futuristic_ui_city.jpg.jpg') center/cover no-repeat;
+        background: url('images/hero_futuristic_ui_city.jpg') center/cover no-repeat;
       }
       .hero-overlay {
         position: absolute;
@@ -325,6 +327,7 @@
         background: linear-gradient(90deg, transparent, #00e0ff, transparent) no-repeat;
         -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
         mask-composite: exclude;
         animation: neonMove 2s infinite linear;
       }
@@ -385,7 +388,7 @@
     <div class="projects-grid">
       <!-- カード2 -->
       <div class="project-card">
-        <img src="images/lucidmaze_thumb.jpg" alt="LucidMaze Lite" />
+        <img src="images/thumbnails/lucidmaze_thumb.jpg" alt="LucidMaze Lite" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>LucidMaze Lite</h3>
         <p>放置パズルゲーム。UIはSF風、Windsurfとノーコード自動化連携。</p>
         <div class="flex">
@@ -395,7 +398,7 @@
       </div>
       <!-- カード3 -->
       <div class="project-card">
-        <img src="images/timer_thumb.jpg" alt="タイマーアプリ" />
+        <img src="images/thumbnails/timer_thumb.jpg" alt="タイマーアプリ" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>ミニマルタイマーアプリ</h3>
         <p>シンプル操作で使いやすいタイマーアプリ。レスポンシブ対応。</p>
         <div class="flex">
@@ -405,17 +408,17 @@
       </div>
       <!-- カード4 -->
       <div class="project-card">
-        <img src="images/breakout_thumb.jpg" alt="ブロック崩しゲーム" />
+        <img src="images/thumbnails/breakout_thumb.jpg" alt="ブロック崩しゲーム" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>ブロック崩し（Python）</h3>
         <p>スコアと時間付きのシンプルなブロック崩しゲーム（Pygame）。</p>
         <div class="flex">
-          <a href="https://github.com/euro0707/block_breaker">GitHub</a>
-          <a href="https://block-breaker-game.windsurf.build/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+          <a href="https://github.com/euro0707/new_block_breaker">GitHub</a>
+          <a href="https://euro0707.github.io/new_block_breaker/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
         </div>
       </div>
       <!-- カード5 -->
       <div class="project-card">
-        <img src="images/focusbooster_thumb.jpg" alt="FocusBooster ポモドーロタイマー" />
+        <img src="images/thumbnails/focusbooster_thumb.jpg" alt="FocusBooster ポモドーロタイマー" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>FocusBooster</h3>
         <p>作業効率化のためのポモドーロ式タイマー Webツール。</p>
         <div class="flex">
@@ -425,7 +428,7 @@
       </div>
       <!-- カード6 -->
       <div class="project-card">
-        <img src="images/synthstellar_thumb.jpg" alt="SynthStellar Beat Game" />
+        <img src="images/thumbnails/synthstellar_thumb.jpg" alt="SynthStellar Beat Game" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>SynthStellar Beat Game</h3>
         <p>宇宙を舞台にしたサウンド連動型リズムゲーム（Phaser 3）。</p>
         <div class="flex">
@@ -435,12 +438,12 @@
       </div>
       <!-- カード7 -->
       <div class="project-card">
-        <img src="images/summarize_thumb.jpg" alt="summarize-url CLI" />
+        <img src="images/thumbnails/summarize_thumb.jpg" alt="summarize-url CLI" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
         <h3>summarize-url.js</h3>
         <p>URLを1行で日本語要約するNode.js CLIツール。</p>
         <div class="flex">
           <a href="https://github.com/euro0707/url-summarizer-">GitHub</a>
-          <a href="#" class="text-pink-400">詳細</a>
+          <a href="https://url-summarizer-zndw.onrender.com/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
         </div>
       </div>
     </div>
