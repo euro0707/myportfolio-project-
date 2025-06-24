@@ -6,7 +6,8 @@ body {
   padding: 0;
 }
 
-.hero-section {
+/* スタンダードヒーローセクション - portrait.htmlでは上書きされます */
+.hero-section:not(.portrait-hero) {
   background: #f5fafe;
   padding: 64px 0 40px 0;
 }
