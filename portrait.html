@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tetsuya Hino | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/matrix.css">
     <!-- FontAwesome Kit -->
     <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
     <!-- FontAwesome CDN (バックアップ) -->
@@ -370,6 +371,7 @@
 </style>
 </head>
 <body>
+<canvas id="matrixCanvas"></canvas>
 
 <!-- ✅ Heroセクション -->
 <section class="hero-section portrait-hero" style="background-image: url('images/hero_futuristic_ui_city.jpg?v=2'); background-size: cover; background-position: center; background-repeat: no-repeat;">
@@ -413,7 +415,7 @@
         <p>スコアと反射角度調整機能付きのブラウザゲーム（HTML5 Canvas/JS）。</p>
         <div class="flex">
           <a href="https://github.com/euro0707/new_block_breaker">GitHub</a>
-          <span class="text-pink-400">Live Demo（準備中）</span>
+          <a href="https://euro0707.github.io/new_block_breaker/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
         </div>
       </div>
       <!-- カード5 -->
@@ -424,6 +426,10 @@
         <div class="flex">
           <a href="https://github.com/euro0707/FocusBooster">GitHub</a>
           <a href="https://euro0707.github.io/FocusBooster/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+          Start with History Ctrl + ⏎
+          Press Enter again to interrupt and send a new message
+          Start with History Ctrl + ⏎
+          
         </div>
       </div>
       <!-- カード6 -->
@@ -489,5 +495,6 @@
 
 
 
+  <script src="assets/js/matrix.js" defer></script>
 </body>
 </html>
