@@ -1,15 +1,497 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="Refresh" content="0; url=portrait.html" />
-  <title>Redirecting…</title>
-  <link rel="canonical" href="portrait.html" />
-  <style>
-    body{font-family:system-ui, sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetsuya | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/matrix.css">
+    <!-- FontAwesome Kit -->
+    <script src="https://kit.fontawesome.com/1234567890.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome CDN (バックアップ) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Orbitron font -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+  /* Brand icon colors */
+  .icon-windsurf { color: #0099ff; }
+  .icon-openai { color: #10a37f; }
+  .icon-github { color: #ffffff; }
+  .icon-vscode { color: #0078d7; }
+
+      /* Hero Section */
+      .hero-section {
+        min-height: 100vh;
+        position: relative;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('images/hero_futuristic_ui_city.jpg?v=1') center/cover no-repeat;
+      }
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+      }
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      @media (min-width: 768px) {
+        .hero-content h1 { font-size: 3.5rem; }
+      }
+      .hero-content p {
+        font-size: 1.3rem;
+      }
+      .hero-arrow {
+        margin-top: 2.5rem;
+        font-size: 2rem;
+        animation: bounce 1.5s infinite;
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(16px); }
+      }
+
+      /* Skills Section */
+      .skills-section {
+        padding: 80px 0;
+        background: url('images/tool_icons_board_vivid.jpg') center/cover no-repeat;
+        color: #fff;
+      }
+      .skills-inner {
+        background: rgba(0,0,0,0.7);
+        padding: 2rem;
+        border-radius: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .skills-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+      .skills-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+      }
+      @media (min-width: 768px) {
+        .skills-list {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      .skills-list li {
+        background: rgba(255,255,255,0.10);
+        padding: 1rem;
+        border-radius: 0.6rem;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* Projects Section */
+      .projects-section {
+        padding: 80px 0;
+        background: url('images/ui_design_structure_vivid.jpg') center/cover no-repeat;
+        color: #fff;
+      }
+      .projects-inner {
+        background: rgba(0,0,0,0.7);
+        padding: 2rem;
+        border-radius: 1.2rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .projects-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        text-align: left;
+      }
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (min-width: 1100px) {
+        .projects-grid {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      .project-card {
+        background: rgba(255,255,255,0.10);
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 0.7rem;
+        margin-bottom: 1rem;
+      }
+      .project-card h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      .project-card p {
+        font-size: 0.98rem;
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+      }
+      .project-card .flex {
+        display: flex;
+        gap: 1.2rem;
+      }
+      .project-card a {
+        color: #60a5fa;
+        text-decoration: underline;
+        font-size: 1rem;
+        transition: color 0.2s;
+      }
+      .project-card a.text-pink-400 {
+        color: #f472b6;
+      }
+      .project-card a:hover {
+        color: #fff;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #000 0%, #334155 60%, #000 100%);
+        color: #fff;
+      }
+      .contact-inner {
+        max-width: 420px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1rem;
+      }
+      .contact-inner h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+      .contact-inner p {
+        margin-bottom: 1.5rem;
+      }
+      .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+  background: rgba(17, 24, 39, 0.9); /* ダークグレーで洗練感 */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-field {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 0.8rem;
+  padding: 1rem 1.2rem;
+  backdrop-filter: blur(6px);
+  transition: background 0.2s ease;
+}
+
+.contact-field:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.4rem 0;
+  outline: none;
+  width: 100%;
+  font-family: inherit;
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* === Neon Contact Form === */
+      .icon-neon svg {
+        stroke: #00e0ff;
+        fill: none;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0 0 4px #00e0ff);
+      }
+      .icon-neon {
+        margin-right: 0.8rem;
+        display: inline-flex;
+      }
+/* === End Neon Contact Form === */
+      .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        text-align: left;
+        background: rgba(0,0,0,0.35);
+        border: 1px solid #00e0ff;
+        border-radius: 20px;
+        box-shadow: 0 0 8px #00e0ff, 0 0 16px rgba(0, 224, 255, 0.6) inset;
+        padding: 2.2rem;
+        font-family: "Orbitron", sans-serif;
+      }
+      .contact-field {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: 1px solid #00e0ff;
+        border-radius: 18px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 0 6px #00e0ff inset;
+        transition: box-shadow 0.25s;
+      }
+      .contact-field:hover {
+        box-shadow: 0 0 10px #00e0ff inset, 0 0 6px #00e0ff;
+      }
+      .contact-field i {
+        color: #00e0ff;
+        font-size: 1.1rem;
+        margin-right: 0.9rem;
+        min-width: 1.2rem;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        background: transparent;
+        color: #c8e7ff;
+        border: none;
+        font-size: 0.95rem;
+        width: 100%;
+        outline: none;
+        font-family: inherit;
+      }
+      .contact-form textarea { min-height: 90px; }
+      .neon-btn {
+        position: relative;
+        display: inline-block;
+        color: #00e0ff;
+        padding: 0.9rem 2.8rem;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 1px solid #00e0ff;
+        border-radius: 20px;
+        background: transparent;
+        cursor: pointer;
+        transition: color 0.3s;
+        font-weight: 600;
+      }
+      .neon-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        padding: 2px;
+        background: linear-gradient(90deg, transparent, #00e0ff, transparent) no-repeat;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        animation: neonMove 2s infinite linear;
+      }
+      @keyframes neonMove {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .neon-btn:hover {
+        color: #081018;
+        background: #00e0ff;
+        box-shadow: 0 0 12px rgba(0,224,255,0.8), 0 0 24px rgba(0,224,255,0.6);
+      }
+
+.contact-form button:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(90deg, #06b6d4 0%, #3b82f6 100%);
+}
+
+        /* Contact Wrapper */
+      .contact-wrapper {
+        position: relative;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(0, 224, 255, 0.3);
+        border-radius: 1.5rem;
+        box-shadow: 0 0 24px rgba(0, 224, 255, 0.4), 0 0 16px rgba(0, 224, 255, 0.2) inset;
+        padding: 3rem;
+        max-width: 600px;
+        width: 90%;
+        margin: 0 auto;
+      }
+      .contact-wrapper h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #00e0ff;
+      }
+  
+
+</style>
 </head>
 <body>
-  <p>Redirecting to <a href="portrait.html">portfolio</a> …</p>
+<canvas id="matrixCanvas"></canvas>
+
+<!-- ✅ Heroセクション -->
+<section class="hero-section portrait-hero" style="background-image: url('images/hero_futuristic_ui_city.jpg?v=2'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Tetsuya</h1>
+    <p>Shaping the Future with Code & Creativity</p>
+    <div class="hero-arrow">↓</div>
+  </div>
+</section>
+
+<!-- ✅ プロジェクトカードセクション -->
+<section class="projects-section">
+  <div class="projects-inner">
+    <h2>My Projects</h2>
+    <div class="projects-grid">
+      <!-- カード2 -->
+      <div class="project-card">
+        <img src="images/thumbnails/lucidmaze_thumb.jpg" alt="LucidMaze Lite" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>LucidMaze Lite</h3>
+        <p>放置パズルゲーム。UIはSF風、Windsurfとノーコード自動化連携。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/LucidMaze-Lite">GitHub</a>
+          <a href="https://lucidmaze-lite-game.windsurf.build/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+        </div>
+      </div>
+      <!-- カード4 -->
+      <div class="project-card">
+        <img src="images/thumbnails/breakout_thumb.jpg" alt="ブロック崩しゲーム" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>ネオンブロック崩し</h3>
+        <p>スコアと反射角度調整機能付きのブラウザゲーム（HTML5 Canvas/JS）。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/new_block_breaker">GitHub</a>
+          <a href="https://euro0707.github.io/new_block_breaker/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+        </div>
+      </div>
+      <!-- カード5 -->
+      <div class="project-card">
+        <img src="images/thumbnails/focusbooster_thumb.jpg" alt="FocusBooster ポモドーロタイマー" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>FocusBooster</h3>
+        <p>作業効率化のためのポモドーロ式タイマー Webツール。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/FocusBooster">GitHub</a>
+          <a href="https://euro0707.github.io/FocusBooster/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+          
+        </div>
+      </div>
+      <!-- カード6 -->
+      <div class="project-card">
+        <img src="images/thumbnails/synthstellar_thumb.jpg" alt="SynthStellar Beat Game" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>SynthStellar Beat Game</h3>
+        <p>宇宙を舞台にしたサウンド連動型リズムゲーム（Phaser 3）。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/SynthStellar">GitHub</a>
+          <a href="https://synthstellar-demo.windsurf.build/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+        </div>
+      </div>
+      <!-- カード7 -->
+      <div class="project-card">
+        <img src="images/thumbnails/summarize_thumb.jpg" alt="summarize-url CLI" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>summarize-url.js</h3>
+        <p>URLを1行で日本語要約するNode.js CLIツール。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/url-summarizer-">GitHub</a>
+          <a href="https://url-summarizer-zndw.onrender.com/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+        </div>
+      </div>
+      <!-- カード8 -->
+      <div class="project-card">
+        <img src="images/thumbnails/guessnumber_thumb.jpg" alt="Guess the Number Game" onerror="this.src='images/ui_design_structure_vivid.jpg'" />
+        <h3>数字あてゲーム</h3>
+        <p>ランダムな 1〜100 の数字を当てるブラウザゲーム。ヒント付き。</p>
+        <div class="flex">
+          <a href="https://github.com/euro0707/Guess-the-Number">GitHub</a>
+          <a href="https://guess-number-game.windsurf.build/" target="_blank" rel="noopener" class="text-pink-400">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Skillsセクション -->
+<section class="skills-section">
+  <div class="skills-inner">
+    <h2>Tools & Technologies</h2>
+    <p class="mb-4">I work with modern tools like Windsurf, ChatGPT, Figma, and more.</p>
+    <ul class="skills-list">
+  <li><i class="fa-solid fa-water icon-windsurf"></i> Windsurf</li>
+  <li><span class="icon-openai" style="display:inline-block; vertical-align:middle;"><svg width="20" height="20" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M32.63 16.43c.38-1.18.58-2.41.58-3.65 0-5.38-4.37-9.75-9.75-9.75-1.25 0-2.49.23-3.65.68a9.75 9.75 0 0 0-9.07 2.59c-3.8 3.8-3.8 9.95 0 13.75.38.38.8.73 1.25 1.05l.03.02c.45.32.93.58 1.43.8l.01.01c.5.22 1.02.39 1.56.52l.03.01c.54.13 1.1.2 1.66.2.56 0 1.12-.07 1.66-.2l.03-.01c.54-.13 1.06-.3 1.56-.52l.01-.01c.5-.22.98-.48 1.43-.8l.03-.02c.45-.32.87-.67 1.25-1.05 3.8-3.8 3.8-9.95 0-13.75a9.75 9.75 0 0 0-9.07-2.59c-1.16-.45-2.4-.68-3.65-.68-5.38 0-9.75 4.37-9.75 9.75 0 1.24.2 2.47.58 3.65a9.75 9.75 0 0 0 2.59 9.07c3.8 3.8 9.95 3.8 13.75 0a9.75 9.75 0 0 0 2.59-9.07z" fill="#10a37f"/></g></svg></span> ChatGPT</li>
+  <li><i class="fa-brands fa-github icon-github"></i> GitHub</li>
+  <li><i class="fa-solid fa-code icon-vscode"></i> VS Code</li>
+</ul>
+  </div>
+</section>
+
+<!-- ✅ Contactセクション -->
+<section class="contact-section">
+  <div class="contact-wrapper">
+    <h2>Contact Me</h2>
+    <p>Thank you for checking out my portfolio. Feel free to get in touch using the form below.</p>
+    <form class="contact-form">
+  <div class="contact-field">
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+    <input type="text" placeholder="Name" />
+  </div>
+  <div class="contact-field">
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M3 5h18v14H3z"/><polyline points="3,5 12,13 21,5"/></svg></span>
+    <input type="email" placeholder="Email" />
+  </div>
+  <div class="contact-field">
+    <span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 4h16v12H7l-3 3z"/></svg></span>
+    <textarea placeholder="Message"></textarea>
+  </div>
+  <button class="neon-btn"><span class="icon-neon"><svg viewBox="0 0 24 24" width="20" height="20"><polygon points="2,3 22,12 2,21 6,12"/></svg></span> Send</button>
+</form>
+  </div>
+</section>
+
+
+
+  <script src="assets/js/matrix.js" defer></script>
 </body>
 </html>
